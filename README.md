@@ -48,12 +48,12 @@ Lost sales are split into two categories:
 
 All simulation parameters are defined at the top of `main.py`:
 
-| Parameter | Default | Description |
-|---|---|---|
-| `DAYS` | `30` | Number of days to simulate |
-| `SHELF_CAPACITY` | `30` | Maximum units the shelf can hold |
-| `DELIVERY_SIZE` | `1` | Units delivered to backroom each day |
-| `SHELF_LIFE` | `5` | Days before a batch expires |
+| Parameter | Description |
+|---|---|
+| `DAYS` | Number of days to simulate |
+| `SHELF_CAPACITY` | Maximum units the shelf can hold |
+| `DELIVERY_SIZE`  Units delivered to backroom each day |
+| `SHELF_LIFE`  Days before a batch expires |
 
 Demand per day is randomly sampled from `random.randint(5, 15)`.
 
