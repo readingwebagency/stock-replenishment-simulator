@@ -48,7 +48,7 @@ def age_batches(batches):
 # -------------------
 DAYS = 30
 SHELF_CAPACITY = 30
-DELIVERY_SIZE = 10
+DELIVERY_SIZE = 1
 SHELF_LIFE = 5
 
 
@@ -108,14 +108,6 @@ for day in range(1, DAYS + 1):
     lost_no_stock = 0
 
     while demand > 0 and shelf:
-        # If shelf is empty → classify lost sales
-        if not shelf:
-            if total_quantity(backroom) > 0:
-                lost_shelf += demand
-            else:
-                lost_no_stock += demand
-            break
-        
         front_batch = shelf[0]
 
         sell_qty = min(front_batch.quantity, demand)
@@ -126,6 +118,12 @@ for day in range(1, DAYS + 1):
 
         if front_batch.quantity == 0:
             shelf.pop(0)
+
+    if not shelf:
+        if total_quantity(backroom) > 0:
+            lost_shelf += demand #lost due to replenishment issue
+        else:
+            lost_no_stock += demand #lost due to ordering issue
 
     lost_sales = demand
 
