@@ -52,8 +52,8 @@ All simulation parameters are defined at the top of `main.py`:
 |---|---|
 | `DAYS` | Number of days to simulate |
 | `SHELF_CAPACITY` | Maximum units the shelf can hold |
-| `DELIVERY_SIZE`  Units delivered to backroom each day |
-| `SHELF_LIFE`  Days before a batch expires |
+| `DELIVERY_SIZE` | Units delivered to backroom each day |
+| `SHELF_LIFE` | Days before a batch expires |
 
 Demand per day is randomly sampled from `random.randint(5, 15)`.
 
